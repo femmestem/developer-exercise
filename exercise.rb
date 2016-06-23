@@ -22,8 +22,12 @@ class Exercise
   # eg. the Fibonacci sequence up to 6 terms is (1, 1, 2, 3, 5, 8),
   # and the sum of its even numbers is (2 + 8) = 10
   def self.even_fibonacci(nth)
+    return 0 unless nth.kind_of?(Fixnum) && nth > 0
     # for each num in the sequence, add to sum if num is even
+    fib_seq = fibonacci(nth)
+    fib_seq.select! { |num| num.even? }
     # return sum
+    fib_seq.reduce(:+)
   end
 
   def self.fibonacci(nth)
