@@ -10,7 +10,7 @@ class Exercise
       # if word is 4 char or less, add intact word to new string
       # if word is greater than 4 char, check if it's capitalized
         # if word is capitalized, replace with "Marklar"
-    # redacted_str.gsub!(/\b[A-Z]{5,}\b/, "Marklar") # No match on "Frazier"
+    redacted_str.gsub!(/\b[A-Z][a-zA-Z]{4,}\b/, "Marklar")
         # if word is not capitalized, replace with "marklar"
     redacted_str.gsub!(/\b[a-z]{5,}\b/, "marklar")
     # return marklar-ified string
