@@ -22,13 +22,22 @@ class Exercise
   # eg. the Fibonacci sequence up to 6 terms is (1, 1, 2, 3, 5, 8),
   # and the sum of its even numbers is (2 + 8) = 10
   def self.even_fibonacci(nth)
+    # for each num in the sequence, add to sum if num is even
+    # return sum
+  end
+
+  def self.fibonacci(nth)
     # get fibonacci's sequence up to the nth index
       # if nth is 0, num is 0
       # if nth is 1, num is 1
       # if nth is 2, num is 1
+    fib_seq = [1, 1]
+    for i in 2..(nth-1)
       # if nth is greater than 2, num is sum of prev num + prev-1 num
-    # for each num in the sequence, add to sum total if num is even
-    # return sum
+      fib_seq[i] = fib_seq[i-1] + fib_seq[i-2]
+    end
+
+    fib_seq
   end
 
 end
